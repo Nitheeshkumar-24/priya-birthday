@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Priyadarshini 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+  <!-- ===== CINEMATIC LETTERBOX BARS ===== -->
+  <div class="letterbox-top"></div>
+  <div class="letterbox-bottom"></div>
+
+  <!-- ===== SCREEN 1: CLOUD SCENE (night sky, moon, stars, parallax) ===== -->
+  <div id="cloud-screen">
+    <div class="sky-bg"></div>
+    <div class="stars-layer" id="stars-layer"></div>
+    <div id="moon">
+      <div class="moon-glow"></div>
+      <div class="moon-craters"></div>
+    </div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star delay2"></div>
+    <div class="cloud-hint">
+      <span class="hint-line1">A night sky full of secrets</span>
+      <span class="hint-line2">✨ Touch the clouds to part the sky ✨</span>
+    </div>
+    <div id="clouds-container"></div>
+  </div>
+
+  <!-- ===== SCREEN 2: BIRTHDAY CARD ===== -->
+  <div id="card-screen" class="hidden">
+
+    <div class="confetti-container" id="confetti"></div>
+    <div class="card-wrapper">
+      <div class="card-eyebrow">— A Story For You —</div>
+      <div class="card-title">Happy Birthday</div>
+      <div class="card-subtitle">Priyadarshini</div>
+
+      <!-- Animated Boy with Bouquet -->
+      <div class="boy-scene">
+        <div class="boy-container">
+          <!-- Boy SVG Character -->
+          <svg class="boy-svg" viewBox="0 0 160 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow -->
+            <ellipse cx="80" cy="255" rx="40" ry="6" fill="rgba(0,0,0,0.15)"/>
+            <!-- Legs -->
+            <rect x="58" y="185" width="18" height="55" rx="8" fill="#2c3e50"/>
+            <rect x="82" y="185" width="18" height="55" rx="8" fill="#2c3e50"/>
+            <!-- Shoes -->
+            <ellipse cx="67" cy="240" rx="14" ry="7" fill="#1a1a2e"/>
+            <ellipse cx="91" cy="240" rx="14" ry="7" fill="#1a1a2e"/>
+            <!-- Body -->
+            <rect x="50" y="110" width="60" height="80" rx="12" fill="#3498db"/>
+            <!-- Shirt collar -->
+            <polygon points="80,115 68,130 80,125 92,130" fill="white"/>
+            <!-- Left arm (raised with bouquet) -->
+            <rect x="20" y="112" width="32" height="14" rx="7" fill="#3498db" transform="rotate(-35 52 119)"/>
+            <!-- Right arm -->
+            <rect x="98" y="112" width="30" height="14" rx="7" fill="#3498db" transform="rotate(20 98 119)"/>
+            <!-- Neck -->
+            <rect x="70" y="95" width="20" height="20" rx="5" fill="#f0c28a"/>
+            <!-- Head -->
+            <ellipse cx="80" cy="78" rx="32" ry="34" fill="#f0c28a"/>
+            <!-- Hair -->
+            <ellipse cx="80" cy="50" rx="32" ry="18" fill="#2c1810"/>
+            <rect x="48" y="50" width="10" height="20" rx="5" fill="#2c1810"/>
+            <rect x="102" y="50" width="10" height="20" rx="5" fill="#2c1810"/>
+            <!-- Eyes -->
+            <ellipse cx="68" cy="76" rx="6" ry="7" fill="white"/>
+            <ellipse cx="92" cy="76" rx="6" ry="7" fill="white"/>
+            <ellipse cx="69" cy="77" rx="3.5" ry="4" fill="#2c1810"/>
+            <ellipse cx="93" cy="77" rx="3.5" ry="4" fill="#2c1810"/>
+            <circle cx="70" cy="76" r="1.2" fill="white"/>
+            <circle cx="94" cy="76" r="1.2" fill="white"/>
+            <!-- Eyebrows -->
+            <path d="M62 68 Q68 64 74 68" stroke="#2c1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M86 68 Q92 64 98 68" stroke="#2c1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Smile -->
+            <path d="M68 90 Q80 100 92 90" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Blush -->
+            <ellipse cx="60" cy="86" rx="8" ry="5" fill="rgba(255,150,150,0.4)"/>
+            <ellipse cx="100" cy="86" rx="8" ry="5" fill="rgba(255,150,150,0.4)"/>
+
+            <!-- BOUQUET in raised hand -->
+            <!-- Stems -->
+            <line x1="28" y1="88" x2="18" y2="108" stroke="#27ae60" stroke-width="3"/>
+            <line x1="22" y1="90" x2="10" y2="106" stroke="#27ae60" stroke-width="3"/>
+            <line x1="34" y1="86" x2="26" y2="108" stroke="#27ae60" stroke-width="3"/>
+            <!-- Leaves -->
+            <ellipse cx="14" cy="100" rx="7" ry="4" fill="#2ecc71" transform="rotate(-30 14 100)"/>
+            <ellipse cx="30" cy="98" rx="7" ry="4" fill="#2ecc71" transform="rotate(20 30 98)"/>
+            <!-- Roses -->
+            <circle cx="10" cy="83" r="11" fill="#e74c3c"/>
+            <circle cx="10" cy="83" r="7" fill="#c0392b"/>
+            <circle cx="10" cy="83" r="4" fill="#e74c3c"/>
+            <circle cx="27" cy="76" r="12" fill="#e91e8c"/>
+            <circle cx="27" cy="76" r="8" fill="#c2185b"/>
+            <circle cx="27" cy="76" r="5" fill="#e91e8c"/>
+            <circle cx="44" cy="80" r="11" fill="#e74c3c"/>
+            <circle cx="44" cy="80" r="7" fill="#c0392b"/>
+            <circle cx="44" cy="80" r="4" fill="#e74c3c"/>
+            <!-- Rose petals detail -->
+            <circle cx="5" cy="78" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <circle cx="15" cy="77" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <circle cx="22" cy="71" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <circle cx="33" cy="70" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <circle cx="39" cy="75" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <circle cx="49" cy="75" r="5" fill="#ff6b9d" opacity="0.7"/>
+            <!-- Ribbon -->
+            <path d="M18 108 Q22 115 18 120 Q22 115 26 120 Q22 115 22 108" fill="#f39c12"/>
+          </svg>
+        </div>
+
+        <div class="speech-bubble">
+          <span class="speech-text">Happy Birthday,<br><strong>Priyadarshini!</strong> 🎉<br>This is for you! 🌹</span>
+        </div>
+      </div>
+
+      <!-- Envelope -->
+      <div class="envelope-wrapper">
+        <p class="envelope-hint">💌 A special letter awaits you...</p>
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+          <div class="envelope-flap" id="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-heart">💌</div>
+          </div>
+        </div>
+        <p class="click-hint">Click the envelope!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN 3: LETTER ===== -->
+  <div id="letter-screen" class="hidden">
+    <div class="floating-emojis" id="floating-emojis"></div>
+    <div class="letter-container">
+      <div class="letter-paper">
+        <div class="letter-header">
+          <span class="letter-emoji">🎂</span>
+          <span class="letter-emoji">🌹</span>
+          <span class="letter-emoji">✨</span>
+        </div>
+        <p class="letter-address">Dear Priyaaa,</p>
+        <div class="letter-body">
+          <p>Happiest 21st Birthday to my favorite girl! 🎉</p>
+          <p>The only person who has the right to call me <em>"kamnati"</em> 😄</p>
+          <p>I really wanted to wish you face to face at 12:00, but I can't right now. I hope it happens in the future.</p>
+          <p>Thank you for being there for me. You understand me in ways very few people do, and I genuinely appreciate having you in my life.</p>
+          <p>I know you're a strong girl, but even strong people don't have to handle everything alone. So please don't hesitate to call me if you ever need anything.</p>
+          <p>For now, let's focus on growing, getting good jobs, exploring the world, and making lots of memories along the way.</p>
+          <p class="letter-quote"><em>"Ena analum pathukelam, Priya."</em> 😊</p>
+          <p>Wishing you a year full of happiness, success, good health, and everything you wish for.</p>
+          <p class="letter-closing">Happy Birthday, Priyaaa! 🎂✨</p>
+        </div>
+        <div class="letter-footer">
+          <span class="letter-emoji anim-bounce">🎉</span>
+          <span class="letter-emoji anim-spin">🌟</span>
+          <span class="letter-emoji anim-bounce">🎈</span>
+          <span class="letter-emoji anim-spin">💖</span>
+          <span class="letter-emoji anim-bounce">🎊</span>
+        </div>
+        <button class="back-btn" onclick="backToCard()">← Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PHOTO BOOK BUTTON (always visible after cloud screen) ===== -->
+  <button class="photobook-btn hidden" id="photobook-btn" onclick="openPhotoBook()">
+    📖<span>Photo Book</span>
+  </button>
+
+  <!-- ===== PHOTO BOOK MODAL ===== -->
+  <div id="photobook-modal" class="hidden">
+    <div class="photobook-overlay" onclick="closePhotoBook()"></div>
+    <div class="photobook-wrapper">
+      <button class="pb-close" onclick="closePhotoBook()">✕</button>
+      <div class="photobook">
+        <button class="pb-arrow pb-left" id="pb-prev" onclick="prevPage()">&#8249;</button>
+        <div class="book-spread" id="book-spread">
+          <!-- Pages injected by JS -->
+        </div>
+        <button class="pb-arrow pb-right" id="pb-next" onclick="nextPage()">&#8250;</button>
+      </div>
+      <div class="pb-page-indicator" id="pb-indicator">Page 1 of 10</div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
